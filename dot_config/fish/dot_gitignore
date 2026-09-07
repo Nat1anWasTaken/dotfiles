@@ -1,0 +1,20 @@
+# macOS metadata
+.DS_Store
+
+# Editor swap / backup files
+*~
+*.swp
+*.swo
+*.tmp
+*.orig
+
+# Fish machine-local/generated state
+fish_variables
+fish_variables.*
+completions/
+functions/
+themes/
+
+# Keep conf.d minimal and portable
+conf.d/*
+!conf.d/auto_venv.fish
