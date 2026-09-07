@@ -66,7 +66,9 @@ fish_add_path $HOME/.grok/bin
 # <<< grok installer <<<
 
 # Added by GitButler installer
-but completions fish | source
+if type -q but
+    but completions fish | source
+end
 
 # Cloudflare CLI completions
 if type -q cf
