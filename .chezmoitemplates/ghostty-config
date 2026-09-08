@@ -1,2 +1,3 @@
 # Preserve Ghostty's terminal capabilities and environment over SSH.
 shell-integration-features = ssh-env,ssh-terminfo
+theme = Catppuccin Mocha
