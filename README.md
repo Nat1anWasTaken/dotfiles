@@ -5,6 +5,7 @@ This is a [chezmoi](https://www.chezmoi.io/) repository for managing personal do
 | Source | Destination | Configuration |
 | --- | --- | --- |
 | `dot_config/fish/` | `~/.config/fish/` | Fish shell |
+| `dot_config/ghostty/` | `~/.config/ghostty/` | Ghostty terminal |
 | `dot_config/nvim/` | `~/.config/nvim/` | Neovim |
 | `dot_tmux.conf` | `~/.tmux.conf` | tmux |
 
