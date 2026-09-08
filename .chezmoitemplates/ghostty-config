@@ -1,5 +1,8 @@
 # Preserve Ghostty's terminal capabilities and environment over SSH.
 shell-integration-features = ssh-env,ssh-terminfo
 theme = Catppuccin Mocha
+
+# Ghostty tries repeated font-family entries in order: use JetBrains Mono for
+# code and other supported glyphs, then fall back to PingFang TC for CJK text.
 font-family = JetBrains Mono
 font-family = PingFang TC
