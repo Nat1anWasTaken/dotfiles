@@ -5,11 +5,17 @@ This is a [chezmoi](https://www.chezmoi.io/) repository for managing personal do
 | Source | Destination | Configuration |
 | --- | --- | --- |
 | `dot_config/fish/` | `~/.config/fish/` | Fish shell |
-| `dot_config/ghostty/` | `~/.config/ghostty/` | Ghostty terminal |
+| `dot_config/ghostty/` | `~/.config/ghostty/` | Ghostty terminal (Linux) |
+| `Library/Application Support/com.mitchellh.ghostty/` | `~/Library/Application Support/com.mitchellh.ghostty/` | Ghostty terminal (macOS) |
 | `dot_config/nvim/` | `~/.config/nvim/` | Neovim |
 | `dot_tmux.conf` | `~/.tmux.conf` | tmux |
 
 The `dot_` prefix is chezmoi's naming convention for files and directories that start with a dot.
+
+Ghostty's settings live in `.chezmoitemplates/ghostty-config`. Both destination
+templates include this shared configuration; `.chezmoiignore` uses `.chezmoi.os`
+to select the native macOS path on Darwin and the XDG path elsewhere. The macOS
+path follows [Ghostty's configuration locations](https://ghostty.org/docs/config).
 
 ## Install chezmoi
 

@@ -1,1 +1,7 @@
 README.md
+
+{{ if eq .chezmoi.os "darwin" }}
+.config/ghostty
+{{ else }}
+Library
+{{ end }}
