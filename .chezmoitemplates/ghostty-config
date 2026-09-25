@@ -1,3 +1,6 @@
+# Attach to the most recently active tmux session, or create one if none exists.
+command = shell:/bin/sh -c 'export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"; session=$(/opt/homebrew/bin/tmux list-sessions -F '"'"'#{session_activity} #{session_id}'"'"' 2>/dev/null | sort -rn | head -n 1 | cut -d '"'"' '"'"' -f 2); if [ -n "$session" ]; then exec /opt/homebrew/bin/tmux attach-session -t "$session"; else exec /opt/homebrew/bin/tmux new-session; fi'
+
 # Preserve Ghostty's terminal capabilities and environment over SSH.
 shell-integration-features = ssh-env,ssh-terminfo
 theme = Pro 
