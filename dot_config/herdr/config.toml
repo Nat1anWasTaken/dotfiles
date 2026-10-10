@@ -1,0 +1,44 @@
+onboarding = false
+
+[ui]
+prompt_new_tab_name = false
+
+[keys]
+prefix = "ctrl+b"
+
+# Panes: tmux navigation, splits, closing, and zoom.
+focus_pane_left = ["prefix+h", "prefix+left"]
+focus_pane_down = ["prefix+j", "prefix+down"]
+focus_pane_up = ["prefix+k", "prefix+up"]
+focus_pane_right = ["prefix+l", "prefix+right"]
+split_vertical = ["prefix+d", "prefix+%"]
+split_horizontal = ["prefix+shift+d", 'prefix+"']
+close_pane = ["prefix+w", "prefix+x"]
+cycle_pane_next = ["prefix+o", "prefix+tab"]
+last_pane = "prefix+semicolon"
+zoom = "prefix+z"
+resize_pane_left = ["prefix+ctrl+left", "prefix+alt+left"]
+resize_pane_down = ["prefix+ctrl+down", "prefix+alt+down"]
+resize_pane_up = ["prefix+ctrl+up", "prefix+alt+up"]
+resize_pane_right = ["prefix+ctrl+right", "prefix+alt+right"]
+
+# Tabs correspond to tmux windows; workspaces correspond to sessions.
+new_tab = ["prefix+c", "prefix+t"]
+previous_tab = "prefix+p"
+next_tab = "prefix+alt+n"
+switch_tab = "prefix+1..9"
+rename_tab = ["prefix+r", "prefix+comma"]
+close_tab = "prefix+ampersand"
+workspace_picker = "prefix+s"
+new_workspace = "prefix+n"
+rename_workspace = ["prefix+shift+r", "prefix+$"]
+close_workspace = "prefix+shift+q"
+detach = "prefix+ctrl+d"
+help = "prefix+?"
+
+# Herdr-specific actions moved away from the tmux bindings above.
+settings = "prefix+shift+s"
+resize_mode = "prefix+alt+r"
+reload_config = "prefix+ctrl+r"
+open_notification_target = "prefix+shift+o"
+goto = ["prefix+g", "prefix+q"]

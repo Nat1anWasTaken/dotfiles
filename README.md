@@ -8,6 +8,7 @@ This is a [chezmoi](https://www.chezmoi.io/) repository for managing personal do
 | `dot_config/ghostty/` | `~/.config/ghostty/` | Ghostty terminal (Linux) |
 | `Library/Application Support/com.mitchellh.ghostty/` | `~/Library/Application Support/com.mitchellh.ghostty/` | Ghostty terminal (macOS) |
 | `dot_config/nvim/` | `~/.config/nvim/` | Neovim |
+| `dot_config/herdr/config.toml` | `~/.config/herdr/config.toml` | Herdr (Ctrl+B prefix, tmux-style keys) |
 | `dot_tmux.conf` | `~/.tmux.conf` | tmux |
 
 The `dot_` prefix is chezmoi's naming convention for files and directories that start with a dot.
