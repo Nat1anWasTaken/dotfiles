@@ -2,6 +2,7 @@ onboarding = false
 
 [ui]
 prompt_new_tab_name = false
+status_indicators = "dots"
 
 [keys]
 prefix = "ctrl+b"
@@ -45,8 +46,17 @@ reload_config = "prefix+ctrl+r"
 open_notification_target = "prefix+shift+o"
 goto = ["prefix+g", "prefix+q"]
 
-# Navigate mode: j/k select workspaces; pane up/down moves to ctrl+j/ctrl+k to avoid the clash.
-navigate_workspace_up = ["k", "up"]
-navigate_workspace_down = ["j", "down"]
+# Navigate mode: j/k and h/l select workspaces; pane moves go to ctrl+hjkl to avoid the clash.
+navigate_workspace_up = ["k", "up", "h"]
+navigate_workspace_down = ["j", "down", "l"]
 navigate_pane_up = "ctrl+k"
 navigate_pane_down = "ctrl+j"
+navigate_pane_left = "ctrl+h"
+navigate_pane_right = "ctrl+l"
+
+[ui.toast]
+delivery = "system"
+
+[theme]
+name = "catppuccin"
+auto_switch = false
