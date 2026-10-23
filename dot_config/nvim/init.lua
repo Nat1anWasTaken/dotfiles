@@ -14,6 +14,9 @@ vim.opt.rtp:prepend(lazypath)
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.number = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
 
 require("lazy").setup({
   {
