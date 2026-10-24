@@ -1,0 +1,7 @@
+{{- if and (has .chezmoi.os (list "darwin" "linux")) (has .chezmoi.arch (list "amd64" "arm64")) }}
+# Prebuilt tmux layout picker, built by .github/workflows/tmux-layout.yml.
+[".tmux/bin/tmux-layout"]
+    type = "file"
+    url = "https://github.com/Nat1anWasTaken/dotfiles/releases/download/tmux-layout-v0.1.0/tmux-layout-{{ .chezmoi.os }}-{{ .chezmoi.arch }}"
+    executable = true
+{{- end }}

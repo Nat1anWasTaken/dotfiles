@@ -18,6 +18,13 @@ templates include this shared configuration; `.chezmoiignore` uses `.chezmoi.os`
 to select the native macOS path on Darwin and the XDG path elsewhere. The macOS
 path follows [Ghostty's configuration locations](https://ghostty.org/docs/config).
 
+The tmux pane layout picker (`Ctrl+B`, then `Space`) is a small Rust program in
+`tmux-layout/`. Pushing a `tmux-layout-v*` tag builds it for macOS and Linux
+(arm64 and amd64) and attaches the binaries to a GitHub release;
+`.chezmoiexternal.toml` downloads the matching one to `~/.tmux/bin/tmux-layout`.
+To release a change, bump `version` in `tmux-layout/Cargo.toml` and the tag in
+`.chezmoiexternal.toml`, commit, then push a tag such as `tmux-layout-v0.1.1`.
+
 ## Install chezmoi
 
 Use the command for your operating system and package manager:

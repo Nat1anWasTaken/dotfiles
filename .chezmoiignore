@@ -1,4 +1,5 @@
 README.md
+tmux-layout
 
 {{ if eq .chezmoi.os "darwin" }}
 .config/ghostty

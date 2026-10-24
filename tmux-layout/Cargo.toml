@@ -1,0 +1,14 @@
+[package]
+name = "tmux-layout"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+crossterm = { version = "0.29.0", default-features = false, features = ["events"] }
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true

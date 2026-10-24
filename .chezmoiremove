@@ -1,0 +1,5 @@
+# Python layout picker, replaced by the tmux-layout binary.
+.tmux/layout-menu.py
+.tmux/layout-cycle.py
+.tmux/layout_common.py
+.tmux/__pycache__
