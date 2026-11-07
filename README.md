@@ -9,6 +9,8 @@ This is a [chezmoi](https://www.chezmoi.io/) repository for managing personal do
 | `Library/Application Support/com.mitchellh.ghostty/` | `~/Library/Application Support/com.mitchellh.ghostty/` | Ghostty terminal (macOS) |
 | `dot_config/nvim/` | `~/.config/nvim/` | Neovim |
 | `dot_config/herdr/config.toml` | `~/.config/herdr/config.toml` | Herdr (Ctrl+B prefix, tmux-style keys) |
+| `dot_config/zed/` | `~/.config/zed/` | Zed (macOS and Linux) |
+| `AppData/Roaming/Zed/` | `%APPDATA%\Zed\` | Zed (Windows) |
 | `dot_tmux.conf` | `~/.tmux.conf` | tmux |
 
 The `dot_` prefix is chezmoi's naming convention for files and directories that start with a dot.
@@ -17,6 +19,19 @@ Ghostty's settings live in `.chezmoitemplates/ghostty-config`. Both destination
 templates include this shared configuration; `.chezmoiignore` uses `.chezmoi.os`
 to select the native macOS path on Darwin and the XDG path elsewhere. The macOS
 path follows [Ghostty's configuration locations](https://ghostty.org/docs/config).
+
+Zed's settings and keymap live in `.chezmoitemplates/zed-settings.json` and
+`.chezmoitemplates/zed-keymap.json`. `.chezmoiignore` installs them to
+`%APPDATA%\Zed` on Windows and `~/.config/zed` elsewhere, following
+[Zed's configuration locations](https://zed.dev/docs/configuring-zed). The
+keymap uses `cmd` on macOS and `ctrl` on Linux and Windows. Because the
+settings are templates, edit the shared template (`chezmoi edit
+~/.config/zed/settings.json`) instead of `chezmoi add` after changing settings
+in Zed.
+
+The Context7 API key is not stored in this public repository. `chezmoi init`
+asks for it once and saves it to `~/.config/chezmoi/chezmoi.toml`; leave it
+empty to skip the Context7 server.
 
 The tmux pane layout picker (`Ctrl+B`, then `Space`) is a small Rust program in
 `tmux-layout/`. Pushing a `tmux-layout-v*` tag builds it for macOS and Linux

@@ -1,0 +1,75 @@
+{{- /* Zed uses cmd on macOS; Linux and Windows use ctrl. */ -}}
+{{- $mod := eq .chezmoi.os "darwin" | ternary "cmd" "ctrl" -}}
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+    }
+  },
+  {
+    "context": "!ContextEditor > (Editor && mode == full)",
+    "bindings": {
+      "{{ $mod }}-k": "assistant::InlineAssist"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "f1": "editor::Hover"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-j": [
+        "editor::SelectNext",
+        {
+          "replace_newest": false
+        }
+      ]
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "command_palette::Toggle"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "shift shift": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "{{ $mod }}-t": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-{{ $mod }}-o": null
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-{{ $mod }}-o": "editor::OrganizeImports"
+    }
+  },
+  {
+    "bindings": {
+      "shift-f6": "terminal::RenameTerminal"
+    }
+  }
+]

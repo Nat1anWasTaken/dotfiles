@@ -6,3 +6,9 @@ tmux-layout
 {{ else }}
 Library
 {{ end }}
+
+{{ if eq .chezmoi.os "windows" }}
+.config/zed
+{{ else }}
+AppData
+{{ end }}

@@ -1,0 +1,4 @@
+{{- /* Secrets stay in the local chezmoi config, never in this public repository. */ -}}
+{{- $context7 := promptStringOnce . "context7_api_key" "Context7 API key for Zed (leave empty to skip)" -}}
+[data]
+    context7_api_key = {{ $context7 | quote }}

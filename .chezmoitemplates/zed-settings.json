@@ -1,0 +1,156 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "autosave": "on_focus_change",
+  "cli_default_open_behavior": "new_window",
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "edit_predictions": {
+    "open_ai_compatible_api": {
+      "model": "gpt-6-luna",
+      "api_url": "http://localhost:8317/v1"
+    },
+    "provider": "open_ai_compatible_api"
+  },
+  "language_models": {
+    "openai_compatible": {
+      "cliproxyapi": {
+        "api_url": "http://localhost:8317/v1",
+        "available_models": [
+          { "name": "claude-opus-5-5", "display_name": "Claude Opus 5.5", "max_tokens": 200000, "capabilities": { "tools": true, "images": true, "parallel_tool_calls": true, "prompt_cache_key": false } },
+          { "name": "claude-opus-4-8", "display_name": "Claude Opus 4.8", "max_tokens": 200000, "capabilities": { "tools": true, "images": true, "parallel_tool_calls": true, "prompt_cache_key": false } },
+          { "name": "claude-sonnet-5-5", "display_name": "Claude Sonnet 5.5", "max_tokens": 200000, "capabilities": { "tools": true, "images": true, "parallel_tool_calls": true, "prompt_cache_key": false } },
+          { "name": "claude-haiku-5-5", "display_name": "Claude Haiku 5.5", "max_tokens": 200000, "capabilities": { "tools": true, "images": true, "parallel_tool_calls": true, "prompt_cache_key": false } },
+          { "name": "claude-fable-5-1", "display_name": "Claude Fable 5.1", "max_tokens": 200000, "capabilities": { "tools": true, "images": true, "parallel_tool_calls": true, "prompt_cache_key": false } },
+          { "name": "gpt-6.1-sol", "display_name": "GPT-6.1 Sol", "max_tokens": 400000, "capabilities": { "tools": true, "images": true, "parallel_tool_calls": true, "prompt_cache_key": false } },
+          { "name": "gpt-6.1-terra", "display_name": "GPT-6.1 Terra", "max_tokens": 400000, "capabilities": { "tools": true, "images": true, "parallel_tool_calls": true, "prompt_cache_key": false } },
+          { "name": "gpt-6-luna", "display_name": "GPT-6 Luna", "max_tokens": 400000, "capabilities": { "tools": true, "images": true, "parallel_tool_calls": true, "prompt_cache_key": false } },
+          { "name": "gpt-6-astra", "display_name": "GPT-6 Astra", "max_tokens": 400000, "capabilities": { "tools": true, "images": true, "parallel_tool_calls": true, "prompt_cache_key": false } },
+          { "name": "grok-4.7", "display_name": "Grok 4.7", "max_tokens": 256000, "capabilities": { "tools": true, "images": true, "parallel_tool_calls": true, "prompt_cache_key": false } },
+          { "name": "grok-build-0.1", "display_name": "Grok Build 0.1", "max_tokens": 256000, "capabilities": { "tools": true, "images": false, "parallel_tool_calls": true, "prompt_cache_key": false } }
+        ]
+      }
+    }
+  },
+  "vim_mode": true,
+{{- with .context7_api_key }}
+  "context_servers": {
+    "mcp-server-context7": {
+      "enabled": true,
+      "settings": {
+        "context7_api_key": {{ . | toJson }}
+      }
+    }
+  },
+{{- end }}
+  "prettier": {
+    "allowed": true
+  },
+  "lsp": {
+    "ty": {
+      "binary": {
+        "path": {{ joinPath .chezmoi.homeDir ".local" "bin" (eq .chezmoi.os "windows" | ternary "ty.exe" "ty") | toJson }},
+        "arguments": ["server"]
+      }
+    }
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["ty", "ruff"]
+    },
+    "Plain Text": {
+      "show_edit_predictions": false
+    },
+    "Markdown": {
+      "show_edit_predictions": true
+    }
+  },
+  "use_system_path_prompts": true,
+  "diagnostics": {
+    "lsp_pull_diagnostics": {
+      "debounce_ms": 50
+    },
+    "inline": {
+      "update_debounce_ms": 150,
+      "padding": 4,
+      "enabled": true
+    }
+  },
+  "agent": {
+    "dock": "right",
+    "tool_permissions": {
+      "default": "allow"
+    },
+    "default_profile": "write",
+    "default_model": {
+      "speed": "fast",
+      "enable_thinking": false,
+      "provider": "cliproxyapi",
+      "model": "claude-sonnet-5-5"
+    },
+    "inline_assistant_model": {
+      "provider": "cliproxyapi",
+      "model": "claude-opus-4-8"
+    },
+    "model_parameters": [],
+    "message_editor_min_lines": 4,
+    "play_sound_when_agent_done": "always"
+  },
+  "agent_servers": {
+    "grok-build": {
+      "type": "registry"
+    },
+    "gemini": {
+      "type": "registry"
+    },
+    "claude-acp": {
+      "type": "registry"
+    },
+    "codex-acp": {
+      "type": "registry"
+    }
+  },
+  "agent_buffer_font_size": 12.0,
+  "agent_ui_font_size": 14.0,
+  "base_keymap": "JetBrains",
+  "buffer_font_family": "JetBrains Mono",
+  "buffer_font_size": 13.0,
+  "confirm_quit": true,
+  "icon_theme": "Material Icon Theme",
+  "inlay_hints": {
+    "enabled": true,
+    "show_other_hints": true,
+    "show_value_hints": true
+  },
+  "lsp_document_colors": "inlay",
+  "show_signature_help_after_edits": true,
+  "terminal": {
+    "font_family": "JetBrainsMono Nerd Font",
+    "working_directory": "current_project_directory",
+    "detect_venv": "off"
+  },
+  "theme": {
+    "mode": "system",
+    "light": "Ayu Light",
+    "dark": "JetBrains Dark"
+  },
+  "ui_font_family": ".SystemUIFont",
+  "ui_font_size": 15.0,
+  "ui_font_weight": 300.0
+}
