@@ -1,0 +1,15 @@
+{{- if ne .chezmoi.os "windows" -}}
+#!/bin/sh
+# Installs Fisher and syncs plugins whenever fish_plugins changes.
+# fish_plugins hash: {{ include "dot_config/fish/fish_plugins" | sha256sum }}
+
+command -v fish >/dev/null 2>&1 || exit 0
+
+exec fish -c '
+if not functions -q fisher
+    curl -fsSL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source
+    or exit 1
+end
+fisher update
+'
+{{ end -}}
