@@ -1,17 +1,4 @@
-# Neovim config
+# 💤 LazyVim
 
-This repository is meant to be cloned directly into `~/.config/nvim`.
-
-## Install
-
-```sh
-git clone <your-repo-url> ~/.config/nvim
-```
-
-On first launch, `lazy.nvim` bootstraps itself automatically from `init.lua`.
-
-## Update
-
-```sh
-git -C ~/.config/nvim pull
-```
+A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
+Refer to the [documentation](https://lazyvim.github.io/installation) to get started.

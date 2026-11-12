@@ -1,7 +1,8 @@
-.DS_Store
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
 *.log
-*.swp
-*.swo
-*.tmp
-Session.vim
-tags
+data
