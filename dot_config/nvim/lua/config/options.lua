@@ -9,3 +9,6 @@ vim.g.lazyvim_python_lsp = "ty"
 
 -- Don't format on save; format manually with <leader>cf
 vim.g.autoformat = false
+
+-- Disable all snacks.nvim animations (scroll, indent, dim, ...)
+vim.g.snacks_animate = false
